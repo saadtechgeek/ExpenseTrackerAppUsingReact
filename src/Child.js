@@ -49,7 +49,6 @@ function Child() {
         <div className='container'>
             <h1 className="text-center">Expense Tracker</h1>
             <h3>Your Balance <br /> ${getIncome() + getExpense() }</h3>
-
             <div className="expense-container"> 
                 <h3>INCOME <br />  ${getIncome()}</h3>
                 <h3>EXPENSE <br /> ${getExpense()}</h3>
@@ -61,7 +60,7 @@ function Child() {
                 {transactions.map((transObj,index)=>{
                     return(<li key={index}>
                         <span>{transObj.desc}</span>
-                        <span>{transObj.amount}</span>
+                        <span>${transObj.amount}</span>
                     </li>)
                 })}
 
