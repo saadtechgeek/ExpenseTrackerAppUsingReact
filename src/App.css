@@ -1,24 +1,40 @@
-.App {
+.container {
+max-width: 400px;
+min-height: 450px;
+margin: 0 auto;
+background-color: #efefef;
+box-shadow: 0 0 10px gray;
+margin-top: 50px;
+padding: 15px 50px;
+}
+
+.text-center {
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.expense-container {
+display: flex;
+justify-content: space-around;
+background-color: white;
+box-shadow: 0 0 10px gray;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+.transactional-form input {
+  width: 100%;
+  margin: 10px 0;
+  padding: 5px 0;
 }
 
-.App-intro {
-  font-size: large;
+.transaction-list {
+  margin:0;
+  padding:0;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.transaction-list > li {
+  display:flex;
+  justify-content:space-between;
+  box-shadow: 0 0 10px gray;
+  background-color: white;
+  padding: 5px 2px;
+  margin: 5px 0;
 }
