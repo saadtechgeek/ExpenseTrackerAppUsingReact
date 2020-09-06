@@ -15,7 +15,7 @@ function Child() {
     let [newAmount,setAmount] = useState(0);
     const handleAddition = (event) => {
         event.preventDefault();
-        if (Number(newAmount ==0)){
+        if (Number(newAmount)===0){
             alert("PLease enter proper value");
             return;
         }
