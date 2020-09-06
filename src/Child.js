@@ -15,22 +15,44 @@ function Child() {
     let [newAmount,setAmount] = useState(0);
     const handleAddition = (event) => {
         event.preventDefault();
+        if (Number(newAmount ==0)){
+            alert("PLease enter proper value");
+            return;
+        }
         //console.log(newDesc,newAmount);
         addTransaction({
-            amount: newAmount,
+            amount: Number(newAmount),
             desc: newDesc
         })
     }
 
-    console.log(transactions);
+    const getIncome = () => {
+        let income = 0;
+        for (var i = 0; i < transactions.length; i++) {
+            if (transactions[i].amount > 0)
+                income += transactions[i].amount
+        }
+        return income;
+    }
+
+    const getExpense = () => {
+        let expense = 0;
+        for (var i = 0; i < transactions.length; i++) {
+            if (transactions[i].amount < 0)
+                expense += transactions[i].amount
+        }
+        return expense;
+    }
+
+   // console.log(transactions);
     return (
         <div className='container'>
             <h1 className="text-center">Expense Tracker</h1>
-            <h3>Your Balance <br /> $260</h3>
+            <h3>Your Balance <br /> ${getIncome() + getExpense() }</h3>
 
             <div className="expense-container"> 
-                <h3>INCOME <br /> $500 </h3>
-                <h3>EXPENSE <br /> $240</h3>
+                <h3>INCOME <br />  ${getIncome()}</h3>
+                <h3>EXPENSE <br /> ${getExpense()}</h3>
             </div>
 
             <h3>History</h3>
